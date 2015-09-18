@@ -9,16 +9,27 @@ MAINTAINER Bradley Bossard <bradleybossard@gmail.com>
 
 RUN apt-get update
 
+RUN apt-get remove ack
+
 RUN apt-get install -y git \
+                       tmux \
+                       vim \
                        ack-grep
 
-# So ack-grep become just ack
-# RUN dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
+WORKDIR /root
 
-ADD https://raw.githubusercontent.com/bradleybossard/dotfiles/master/.vimrc ~/.vimrc
-ADD https://raw.githubusercontent.com/bradleybossard/dotfiles/master/.tmux.conf ~/.tmux.conf
-ADD https://raw.githubusercontent.com/bradleybossard/dotfiles/master/.git_completion ~/.git_completion
-ADD https://raw.githubusercontent.com/bradleybossard/dotfiles/master/.bashrc ~/.bashrc
-ADD https://raw.githubusercontent.com/bradleybossard/dotfiles/master/.ackrc ~/.ackrc
-ADD https://raw.githubusercontent.com/bradleybossard/dotfiles/master/.bash_aliases ~/.bash_aliases
+ADD https://raw.githubusercontent.com/bradleybossard/dotfiles/master/.vimrc ./.vimrc
+ADD https://raw.githubusercontent.com/bradleybossard/dotfiles/master/.tmux.conf ./.tmux.conf
+ADD https://raw.githubusercontent.com/bradleybossard/dotfiles/master/.git_completion ./.git_completion
+ADD https://raw.githubusercontent.com/bradleybossard/dotfiles/master/.bashrc ./.bashrc
+ADD https://raw.githubusercontent.com/bradleybossard/dotfiles/master/.ackrc ./.ackrc
+ADD https://raw.githubusercontent.com/bradleybossard/dotfiles/master/.bash_aliases ./.bash_aliases
+
+RUN git clone https://github.com/gmarik/vundle.git ./.vim/bundle/vundle
+# git clone https://github.com/mattn/emmet-vim.git ~/.vim/bundle
+
+# Install Vundle Bundles
+RUN vim +BundleInstall +qall
+
+
 
