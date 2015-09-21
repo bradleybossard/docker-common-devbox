@@ -20,6 +20,7 @@ WORKDIR /root
 
 ADD https://raw.githubusercontent.com/bradleybossard/dotfiles/master/.vimrc ./.vimrc
 ADD https://raw.githubusercontent.com/bradleybossard/dotfiles/master/.tmux.conf ./.tmux.conf
+ADD https://raw.githubusercontent.com/bradleybossard/dotfiles/master/.gitconfig ./.gitconfig
 ADD https://raw.githubusercontent.com/bradleybossard/dotfiles/master/.git_completion ./.git_completion
 ADD https://raw.githubusercontent.com/bradleybossard/dotfiles/master/.bashrc ./.bashrc
 ADD https://raw.githubusercontent.com/bradleybossard/dotfiles/master/.ackrc ./.ackrc
