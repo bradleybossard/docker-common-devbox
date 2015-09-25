@@ -13,6 +13,7 @@ RUN apt-get remove ack
 
 RUN apt-get install -y git \
                        curl \
+                       wget \
                        tmux \
                        vim \
                        ack-grep
