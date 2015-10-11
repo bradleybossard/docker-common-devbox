@@ -1,4 +1,4 @@
-FROM ubuntu:14.10
+FROM ubuntu:14.04
 MAINTAINER Bradley Bossard <bradleybossard@gmail.com>
 
 # Build the image
@@ -9,7 +9,7 @@ MAINTAINER Bradley Bossard <bradleybossard@gmail.com>
 
 RUN apt-get update
 
-RUN apt-get remove ack
+#RUN apt-get remove ack
 
 RUN apt-get install -y git \
                        curl \
@@ -17,6 +17,7 @@ RUN apt-get install -y git \
                        tmux \
                        vim \
                        ack-grep
+RUN dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep                       
 
 WORKDIR /root
 RUN git clone https://github.com/bradleybossard/dotfiles.git
