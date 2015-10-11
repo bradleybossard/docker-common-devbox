@@ -2,10 +2,10 @@ FROM ubuntu:14.10
 MAINTAINER Bradley Bossard <bradleybossard@gmail.com>
 
 # Build the image
-# docker build --rm -t docker-devbox-common .
+# docker build --rm -t docker-common-devbox .
 
 # Fire up an instance with a bash shell
-# docker run --rm -i -t docker-devbox-common
+# docker run --rm -i -t docker-common-devbox
 
 RUN apt-get update
 
