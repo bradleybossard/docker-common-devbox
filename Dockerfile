@@ -17,6 +17,7 @@ RUN apt-get install -y git \
                        tmux \
                        vim \
                        grc \
+                       tree \
                        ack-grep
 RUN dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep                       
 
