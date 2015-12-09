@@ -12,6 +12,7 @@ RUN apt-get update
 RUN apt-get remove ack
 
 RUN apt-get install -y git \
+                       tig \
                        curl \
                        wget \
                        tmux \
