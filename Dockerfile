@@ -27,3 +27,6 @@ WORKDIR /root
 RUN git clone https://github.com/bradleybossard/dotfiles.git
 RUN git clone https://github.com/gmarik/vundle.git ./.vim/bundle/vundle
 RUN cd dotfiles; sh setup.sh;
+
+ENV TERM xterm
+
