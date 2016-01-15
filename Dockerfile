@@ -7,7 +7,11 @@ MAINTAINER Bradley Bossard <bradleybossard@gmail.com>
 # Fire up an instance with a bash shell
 # docker run --rm -i -t docker-common-devbox
 
-RUN apt-get update
+# Replace shell with bash so we can source files
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
+# make sure apt is up to date
+RUN apt-get update --fix-missing
 
 RUN apt-get remove ack
 
