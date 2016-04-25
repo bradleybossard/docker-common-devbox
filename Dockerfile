@@ -16,6 +16,7 @@ RUN apt-get update --fix-missing
 RUN apt-get remove ack
 
 RUN apt-get install -y git \
+                       git-extras \
                        tig \
                        curl \
                        wget \
