@@ -1,4 +1,4 @@
-FROM ubuntu:15.04
+FROM ubuntu:15.10
 MAINTAINER Bradley Bossard <bradleybossard@gmail.com>
 
 # Build the image
@@ -11,11 +11,9 @@ MAINTAINER Bradley Bossard <bradleybossard@gmail.com>
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # make sure apt is up to date
-RUN apt-get update --fix-missing
-
-RUN apt-get remove ack
-
-RUN apt-get install -y git \
+RUN apt-get update --fix-missing && \
+    apt-get remove ack && \
+    apt-get install -y git \
                        git-extras \
                        tig \
                        curl \
