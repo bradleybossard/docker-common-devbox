@@ -1,4 +1,4 @@
-FROM ubuntu:15.10
+FROM ubuntu:16.04
 MAINTAINER Bradley Bossard <bradleybossard@gmail.com>
 
 # Build the image
